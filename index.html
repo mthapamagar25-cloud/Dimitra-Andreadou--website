@@ -10,8 +10,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Figtree:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="style.css">
-        <link rel="icon" type="image/png" href="/da.png">
-   <link rel="apple-touch-icon" href="/da.png">
 </head>
 <body>
 
@@ -90,7 +88,7 @@
       </figure>
       <div class="hero-badge">
         <span class="pulse" aria-hidden="true"></span>
-        <p><b>Praxis 11 · Zürich-Oerlikon</b><span lang="de">und Domizilbehandlungen</span><span lang="en">and home visits</span></p>
+        <p><b><span lang="de">Zürich-Oerlikon und Umgebung</span><span lang="en">Zurich-Oerlikon and area</span></b><span lang="de">In der Praxis und bei Ihnen zu Hause</span><span lang="en">In the practice and at your home</span></p>
       </div>
     </div>
   </div>
@@ -652,17 +650,9 @@
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow"><span lang="de">Standorte</span><span lang="en">Locations</span></p>
-      <h2><span lang="de">In der Praxis oder bei Ihnen zu Hause</span><span lang="en">In the practice or at your home</span></h2>
+      <h2><span lang="de">Bei Ihnen zu Hause oder in der Praxis</span><span lang="en">At your home or in the practice</span></h2>
     </div>
     <div class="loc-grid">
-      <article class="loc loc-practice">
-        <div class="mini-map" aria-hidden="true"><span class="road r1"></span><span class="road r2"></span><span class="road r3"></span><span class="pin"></span></div>
-        <div class="loc-body">
-          <h3>Praxis 11 – Zürich-Oerlikon</h3>
-          <address>Praxis 11<br>Regensbergstrasse 318<br>8050 Zürich</address>
-          <a class="btn btn-ghost btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Regensbergstrasse%20318%2C%208050%20Z%C3%BCrich" target="_blank" rel="noopener"><span lang="de">Route in Google Maps</span><span lang="en">Directions in Google Maps</span> <span aria-hidden="true">↗</span></a>
-        </div>
-      </article>
       <article class="loc loc-home">
         <span class="loc-icon" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M6 19 20 7l14 12M10 16v17h20V16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M17 33v-8h6v8" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
         <h3><span lang="de">Domizilbehandlungen</span><span lang="en">Home visits</span></h3>
@@ -672,7 +662,20 @@
         <ul class="areas">
           <li>Glattbrugg</li><li>Oerlikon</li><li>Rümlang</li><li><span lang="de">und Umgebung</span><span lang="en">and surrounding area</span></li>
         </ul>
+        <a class="btn btn-primary btn-sm loc-cta" href="#kontakt"><span lang="de">Hausbesuch anfragen</span><span lang="en">Ask about a home visit</span></a>
       </article>
+
+      <!-- Places where I currently work. To add another location later, copy one <li> block. -->
+      <aside class="loc loc-work" aria-labelledby="work-title">
+        <p class="loc-work-label" id="work-title"><span lang="de">Aktuell tätig in</span><span lang="en">Currently working at</span></p>
+        <ul class="workplaces">
+          <li>
+            <b>Praxis 11</b>
+            <address>Regensbergstrasse 318<br>8050 Zürich-Oerlikon</address>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Regensbergstrasse%20318%2C%208050%20Z%C3%BCrich" target="_blank" rel="noopener"><span lang="de">In Google Maps öffnen</span><span lang="en">Open in Google Maps</span> <span aria-hidden="true">↗</span></a>
+          </li>
+        </ul>
+      </aside>
     </div>
   </div>
 </section>
