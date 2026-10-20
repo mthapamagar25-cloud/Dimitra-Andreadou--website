@@ -105,7 +105,7 @@ h2{font-size:var(--step-3)}
 .brand-text{display:grid;line-height:1.15;min-width:0}
 .brand-text b{font-family:var(--f-display);font-weight:500;font-size:1.25rem;letter-spacing:-.01em;white-space:nowrap}
 .brand-text small{font-size:.78rem;letter-spacing:.08em;color:var(--ink-soft)}
-.header-tools{display:flex;align-items:center;gap:12px;flex:none}
+.header-tools{display:flex;align-items:center;gap:12px}
 .header-phone{display:inline-flex;align-items:center;gap:8px;font-weight:500;font-size:.95rem;text-decoration:none;font-variant-numeric:tabular-nums}
 .header-phone svg{width:18px;height:18px;color:var(--sage-deep)}
 .header-phone:hover{color:var(--sage-deep)}
@@ -375,21 +375,21 @@ h2{font-size:var(--step-3)}
 
 /* ---------- 12. Locations ---------- */
 .locations{background:var(--paper)}
-.loc-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(16px,2.5vw,28px)}
+.loc-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,.9fr);gap:clamp(16px,2.5vw,28px);align-items:start}
 .loc{border-radius:var(--radius);background:var(--cream);overflow:hidden}
-.loc-practice{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
-.mini-map{position:relative;min-height:240px;background:var(--sand-tint);overflow:hidden}
-.mini-map::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,var(--sage-tint) 0 18%,transparent 19%),radial-gradient(circle at 20% 80%,var(--blue-tint) 0 22%,transparent 23%)}
-.road{position:absolute;background:var(--paper);border-radius:6px}
-.r1{left:-10%;right:-10%;top:52%;height:14px;transform:rotate(-14deg)}
-.r2{top:-10%;bottom:-10%;left:38%;width:10px;transform:rotate(18deg)}
-.r3{left:-10%;right:30%;top:22%;height:8px;transform:rotate(9deg)}
-.pin{position:absolute;left:47%;top:44%;width:26px;height:26px;border-radius:50% 50% 50% 0;background:var(--sage-deep);transform:translate(-50%,-50%) rotate(-45deg);box-shadow:0 8px 16px -6px rgba(69,72,67,.5)}
-.pin::after{content:"";position:absolute;inset:8px;border-radius:50%;background:var(--paper)}
-.loc-body{display:grid;align-content:center;justify-items:start;gap:16px;padding:clamp(24px,3.5vw,40px)}
 .loc h3{font-size:var(--step-2)}
-address{font-style:normal;font-size:1.05rem;line-height:1.6}
-.loc-home{display:grid;align-content:start;gap:14px;padding:clamp(24px,3.5vw,40px);background:var(--sage-tint)}
+address{font-style:normal;line-height:1.55}
+.loc-home{display:grid;align-content:start;justify-items:start;gap:14px;padding:clamp(24px,3.5vw,44px);background:var(--sage-tint)}
+.loc-cta{margin-top:10px}
+/* Quieter "currently working at" card */
+.loc-work{display:grid;gap:14px;padding:clamp(20px,2.5vw,28px);background:transparent;border:1px solid var(--line)}
+.loc-work-label{font-size:.76rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.workplaces{display:grid;gap:16px}
+.workplaces li{display:grid;gap:4px;font-size:.95rem;color:var(--ink-soft)}
+.workplaces li+li{padding-top:16px;border-top:1px solid var(--line)}
+.workplaces b{font-weight:600;color:var(--ink)}
+.map-link{justify-self:start;display:inline-flex;align-items:center;gap:6px;min-height:44px;font-weight:600;font-size:.92rem;color:var(--sage-deep);text-decoration:none}
+.map-link:hover{text-decoration:underline;text-underline-offset:4px}
 .loc-icon{width:52px;height:52px;display:grid;place-items:center;border-radius:50%;background:var(--paper);color:var(--sage-deep)}
 .loc-icon svg{width:28px;height:28px}
 .loc-home p{color:var(--ink-soft)}
@@ -518,18 +518,9 @@ address{font-style:normal;font-size:1.05rem;line-height:1.6}
 }
 @media (max-width:620px){
   .header-cta{display:none}
-  .header-top{gap:10px}
-  .header-tools{gap:8px}
-  .brand{gap:8px}
-  .brand-mark{width:30px;height:30px}
-  .brand-text b{font-size:1rem}
-  .brand-text small{font-size:.68rem;letter-spacing:.04em}
-  .header-lang{padding:2px}
-  .header-lang button{min-width:32px;min-height:30px;padding:0 6px;font-size:.72rem}
-  .menu-btn{width:40px;height:40px}
-  .menu-btn i{left:12px;right:12px}
-  .menu-btn i:first-of-type{top:15px}.menu-btn i:last-of-type{top:23px}
-  .menu-btn[aria-expanded="true"] i:first-of-type,.menu-btn[aria-expanded="true"] i:last-of-type{top:19px}
+  .brand-mark{width:34px;height:34px}
+  .brand-text b{font-size:1.1rem}
+  .brand-text small{font-size:.72rem}
   .hero-actions .btn{flex:1 1 100%}
   .hero-badge{position:relative;left:auto;bottom:auto;margin:-36px auto 0;max-width:290px}
   .about-side{grid-template-columns:1fr}
@@ -538,8 +529,6 @@ address{font-style:normal;font-size:1.05rem;line-height:1.6}
   .timeline li{grid-template-columns:1fr;gap:2px;padding:10px 0 10px 30px}
   .timeline li::before{left:2px}
   .topic-wide{grid-template-columns:1fr}
-  .loc-practice{grid-template-columns:1fr}
-  .mini-map{min-height:160px}
   .contact-form>.btn,.form-status .btn{justify-self:stretch}
   .footer-grid{grid-template-columns:1fr}
   .section-head.center .eyebrow::before{display:none}
@@ -550,8 +539,7 @@ address{font-style:normal;font-size:1.05rem;line-height:1.6}
   .icon-ring{grid-row:auto}
 }
 @media (max-width:380px){
-  .lang-switch button{min-width:30px;padding:0 5px}
-  .brand-text b{font-size:.95rem}
+  .lang-switch button{min-width:36px;padding:0 6px}
   .brand-text small{display:none}
 }
 @media (prefers-reduced-motion:reduce){
@@ -559,3 +547,15 @@ address{font-style:normal;font-size:1.05rem;line-height:1.6}
   *,*::before,*::after{animation:none!important;transition:none!important}
   .reveal-pending{opacity:1;transform:none}
 }
+
+/* ---------- Feedback 13 Oct: name always visible, 3 prescription facts ---------- */
+.nav-lang{display:none}
+.rx ul{grid-template-columns:repeat(3,minmax(0,1fr))}
+.brand-text b{overflow:visible}
+@media (max-width:620px){
+  .header-lang{display:none}
+  .main-nav .nav-lang{display:flex;align-self:flex-start;margin-top:18px}
+  .nav-lang button{min-width:96px;min-height:44px;font-size:.88rem;letter-spacing:.02em}
+  .rx ul{grid-template-columns:1fr}
+}
+.main-nav a.nav-cta,.main-nav a.nav-cta:hover{color:var(--paper)}
