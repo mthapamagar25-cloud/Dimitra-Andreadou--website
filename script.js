@@ -65,13 +65,19 @@ document.addEventListener("DOMContentLoaded", () => {
     $$("[data-set-lang]").forEach(btn => btn.setAttribute("aria-pressed", String(btn.dataset.setLang === lang)));
     $$("[data-ph-de]").forEach(el => { el.placeholder = lang === "de" ? el.dataset.phDe : el.dataset.phEn; });
     $$("option[data-de]").forEach(opt => { opt.textContent = opt.dataset[lang]; });
-    clearFormMessages();
+    try { clearFormMessages(); } catch (e) { /* form not set up yet on first load */ }
     try { localStorage.setItem("da-lang", lang); } catch (e) { /* storage unavailable */ }
-    document.dispatchEvent(new CustomEvent("da:lang", { detail: lang }));
+    // Parts drawn by script (the milestones guide) redraw themselves in the new language.
+    try { document.dispatchEvent(new CustomEvent("da:lang", { detail: lang })); } catch (e) { console.error(e); }
   }
+  // One listener for every DE / EN button, so the switch keeps working even if the menu is redrawn.
+  document.addEventListener("click", e => {
+    const btn = e.target.closest("[data-set-lang]");
+    if (btn) setLanguage(btn.dataset.setLang);
+  });
   let savedLang = null;
   try { savedLang = localStorage.getItem("da-lang"); } catch (e) { /* storage unavailable */ }
-  $$("[data-set-lang]").forEach(btn => btn.addEventListener("click", () => setLanguage(btn.dataset.setLang)));
+  setLanguage(savedLang || root.lang || "de");
 
   /* ---------- 2. Mobile navigation ---------- */
   const header = $("#site-header");
@@ -314,10 +320,9 @@ document.addEventListener("DOMContentLoaded", () => {
     pending.forEach(el => revealer.observe(el));
   }
 
-  /* ---------- 11. Footer year + initial language ---------- */
+  /* ---------- 11. Footer year ---------- */
   const year = $("#year");
   if (year) year.textContent = String(new Date().getFullYear());
-  setLanguage(savedLang || "de");
 });
 
 /* =====================================================================
